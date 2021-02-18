@@ -8,12 +8,14 @@ const Label = ({
   style,
   eventProps,
   editIconVisible,
+  handleIconClicked,
 }: {
   text: string;
   editType: 'dbclick' | 'click' | 'hover' | undefined;
   style: React.CSSProperties | undefined;
   eventProps: any;
   editIconVisible: boolean;
+  handleIconClicked: Function;
 }) => {
   return (
     <button
@@ -25,7 +27,12 @@ const Label = ({
       {...eventProps}
     >
       {text}
-      {editType === 'hover' && <EditIcon isVisible={editIconVisible} />}
+      {editType === 'hover' && (
+        <EditIcon
+          onIconClicked={handleIconClicked}
+          isVisible={editIconVisible}
+        />
+      )}
     </button>
   );
 };

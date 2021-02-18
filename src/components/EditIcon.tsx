@@ -3,8 +3,7 @@ import { Edit } from '@material-ui/icons';
 import { EditIconProps } from '../types';
 import { Tooltip } from '@material-ui/core';
 
-const EditIcon = (props: EditIconProps) => {
-  const { isVisible } = props;
+const EditIcon = ({ isVisible, onIconClicked }: EditIconProps) => {
   return (
     <span style={{ fontSize: '12px', cursor: 'pointer' }}>
       <Tooltip title="Edit">
@@ -13,6 +12,7 @@ const EditIcon = (props: EditIconProps) => {
           style={{ visibility: isVisible ? 'visible' : 'hidden' }}
           onClick={() => {
             console.log('icon clicked !!!');
+            onIconClicked();
           }}
         />
       </Tooltip>

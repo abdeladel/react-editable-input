@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useEvent = (editType: string | undefined) => {
+const useEvent = (editType: string | undefined, startEditing: Function) => {
   const [editIconVisible, setEditIconVisible] = useState(false);
 
   let timer: any;
@@ -8,10 +8,12 @@ const useEvent = (editType: string | undefined) => {
   let prevent = false;
 
   const doClickAction = () => {
-    console.log(' click');
+    console.log('clicked');
+    startEditing();
   };
   const doDoubleClickAction = () => {
-    console.log('Double Click');
+    console.log('Double Clicked');
+    startEditing();
   };
   const handleClick = () => {
     timer = setTimeout(() => {

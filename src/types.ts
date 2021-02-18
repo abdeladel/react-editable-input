@@ -64,4 +64,5 @@ export type EditableInputProps = {
 
 export type EditIconProps = {
   isVisible: boolean;
+  onIconClicked: Function;
 };

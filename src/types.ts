@@ -1,3 +1,15 @@
+export type Type =
+  | 'text'
+  | 'number'
+  | 'textarea'
+  | 'select'
+  | 'multiSelect'
+  | 'date'
+  | 'checkbox'
+  | 'radio'
+  | 'switcher'
+  | 'color';
+
 export type EditableInputProps = {
   /**
    * If true it will be editable
@@ -25,14 +37,7 @@ export type EditableInputProps = {
    *
    * @type {("string" | "number" | "textarea" | "select" | "multiSelect" | "date" | "color")}
    */
-  type?:
-    | 'text'
-    | 'number'
-    | 'textarea'
-    | 'select'
-    | 'multiSelect'
-    | 'date'
-    | 'color';
+  type?: Type;
 
   /**
    * Function run when the input changes

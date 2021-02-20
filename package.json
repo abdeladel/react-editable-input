@@ -20,8 +20,6 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
     "react": ">=16"
   },
   "husky": {
@@ -59,5 +57,9 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
     "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2"
   }
 }

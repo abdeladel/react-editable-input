@@ -10,6 +10,8 @@ export type Type =
   | 'switcher'
   | 'color';
 
+export type Value = string | number;
+
 export type EditableInputProps = {
   /**
    * If true it will be editable
@@ -30,7 +32,7 @@ export type EditableInputProps = {
    *
    * @type {(string | number)}
    */
-  value?: string | number;
+  value?: Value;
 
   /**
    * Type of the input to be edited in
@@ -43,7 +45,7 @@ export type EditableInputProps = {
    * Function run when the input changes
    *
    */
-  onChange?: () => {};
+  onChange?: Function;
 
   /**
    * Indicates how to open the edit component

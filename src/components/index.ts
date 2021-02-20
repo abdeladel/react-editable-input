@@ -1,4 +1,4 @@
 import Label from './Label';
-import EditIcon from './EditIcon';
+import SmallIconButton from './SmallIconButton';
 
-export { Label, EditIcon };
+export { Label, SmallIconButton };

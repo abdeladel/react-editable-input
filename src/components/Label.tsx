@@ -1,5 +1,6 @@
+import { Edit } from '@material-ui/icons';
 import React from 'react';
-import { EditIcon } from '.';
+import { SmallIconButton } from '.';
 import { defaultProps } from '../defaultProps';
 
 const Label = ({
@@ -28,9 +29,11 @@ const Label = ({
     >
       {text}
       {editType === 'hover' && (
-        <EditIcon
-          onIconClicked={handleIconClicked}
+        <SmallIconButton
+          title="Edit"
           isVisible={editIconVisible}
+          handleClick={handleIconClicked}
+          icon={<Edit />}
         />
       )}
     </button>

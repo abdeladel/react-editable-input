@@ -27,9 +27,9 @@ export type EditableInputProps = {
   /**
    * Text to be displayed
    *
-   * @type {string}
+   * @type {Value}
    */
-  text: string;
+  text: Value;
 
   /**
    * Value of the input

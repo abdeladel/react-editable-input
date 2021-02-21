@@ -14,6 +14,8 @@ export type Type =
 
 export type Value = string | number;
 
+export type EditType = 'dbclick' | 'click' | 'hover';
+
 export type EditableInputProps = {
   /**
    * If true it will be editable
@@ -32,14 +34,14 @@ export type EditableInputProps = {
   /**
    * Value of the input
    *
-   * @type {(string | number)}
+   * @type {Value}
    */
   value?: Value;
 
   /**
    * Type of the input to be edited in
    *
-   * @type {("string" | "number" | "textarea" | "select" | "multiSelect" | "date" | "color")}
+   * @type {Type}
    */
   type?: Type;
 
@@ -52,9 +54,9 @@ export type EditableInputProps = {
   /**
    * Indicates how to open the edit component
    *
-   * @type {("dbclick" | "click" | "hover")}
+   * @type {EditType}
    */
-  editType?: 'dbclick' | 'click' | 'hover';
+  editType?: EditType;
 
   /**
    * Indicates how to edit the label

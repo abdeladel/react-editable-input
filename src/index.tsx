@@ -3,16 +3,26 @@ import { Label } from './components';
 import { BaseInput } from './components/input';
 import { defaultProps } from './defaultProps';
 import { useEvent } from './hooks';
-import { EditableInputProps } from './types';
+import { EditableInputProps, Value } from './types';
 
 export default function EditableInput(props: EditableInputProps) {
-  const { text, style, editType, type } = props;
+  const { text, style, editType, type, value, onChange } = props;
   const [editing, setEditing] = React.useState(false);
   const startEditing = () => {
     setEditing(true);
   };
   const { eventProps, editIconVisible } = useEvent(editType, startEditing);
-  if (editing) return <BaseInput type={type} />;
+  if (editing)
+    return (
+      <BaseInput
+        type={type}
+        value={value || text}
+        onFinishEditing={(newValue: Value) => {
+          setEditing(false);
+          if (onChange) onChange(newValue);
+        }}
+      />
+    );
   return (
     <Label
       text={text}

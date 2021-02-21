@@ -11,13 +11,25 @@ import {
   Radio,
   Switcher,
 } from '.';
-import { Type } from '../../types';
+import { Type, Value } from '../../types';
 
-export const BaseInput = ({ type }: { type?: Type }) => {
+export const BaseInput = ({
+  type,
+  value,
+  onFinishEditing,
+}: {
+  type?: Type;
+  value?: Value;
+  onFinishEditing: Function;
+}) => {
   switch (type) {
     case 'text':
-      return <InputText />;
     case 'number':
+    case 'email':
+    case 'password':
+      return (
+        <InputText type={type} value={value} handleChange={onFinishEditing} />
+      );
       return <Number />;
     case 'textarea':
       return <TextArea />;

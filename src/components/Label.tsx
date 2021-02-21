@@ -2,6 +2,7 @@ import { Edit } from '@material-ui/icons';
 import React from 'react';
 import { SmallIconButton } from '.';
 import { defaultProps } from '../defaultProps';
+import { EditType } from '../types';
 
 const Label = ({
   text,
@@ -12,7 +13,7 @@ const Label = ({
   handleIconClicked,
 }: {
   text: string;
-  editType: 'dbclick' | 'click' | 'hover' | undefined;
+  editType?: EditType;
   style: React.CSSProperties | undefined;
   eventProps: any;
   editIconVisible: boolean;

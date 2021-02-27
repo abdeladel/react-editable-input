@@ -71,6 +71,20 @@ export type EditableInputProps = {
    * @type {React.CSSProperties}
    */
   style?: React.CSSProperties;
+
+  /**
+   * list of options for type select and multiSelect
+   *
+   * @type {[{ label: string; value: string | number }]}
+   */
+  list?: [{ label: string; value: string | number }];
+
+  /**
+   * empty option for type select
+   *
+   * @type {boolean}
+   */
+  emptyOption: boolean;
 };
 
 export type EditIconProps = {

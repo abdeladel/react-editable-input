@@ -6,7 +6,6 @@ import {
   MultiSelect,
   Date,
   Color,
-  Number,
   InputCheckbox,
   Radio,
   Switcher,
@@ -17,10 +16,12 @@ export const BaseInput = ({
   type,
   value,
   onFinishEditing,
+  list,
 }: {
   type?: Type;
   value?: Value;
   onFinishEditing: Function;
+  list?: [{ label: string; value: string | number }];
 }) => {
   switch (type) {
     case 'text':
@@ -30,11 +31,16 @@ export const BaseInput = ({
       return (
         <InputText type={type} value={value} handleChange={onFinishEditing} />
       );
-      return <Number />;
     case 'textarea':
       return <TextArea />;
     case 'select':
-      return <Select />;
+      return (
+        <Select
+          list={list || [{ value: '', label: '' }]}
+          value={value}
+          handleChange={onFinishEditing}
+        />
+      );
     case 'multiSelect':
       return <MultiSelect />;
     case 'date':

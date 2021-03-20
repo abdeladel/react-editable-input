@@ -21,6 +21,7 @@ export default function EditableInput(props: EditableInputProps) {
           setEditing(false);
           if (onChange) onChange(newValue);
         }}
+        {...props}
       />
     );
   return (

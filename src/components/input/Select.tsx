@@ -35,7 +35,7 @@ const Select = ({
           setCurrentValue(v)
         }
       >
-        {list.map(e => (
+        {list?.map(e => (
           <MenuItem value={e.value}>{e.label}</MenuItem>
         ))}
       </MuiSelect>
@@ -53,6 +53,10 @@ const Select = ({
       </InputAdornment>
     </FexDiv>
   );
+};
+
+Select.defaultProps = {
+  list: [],
 };
 
 export default Select;

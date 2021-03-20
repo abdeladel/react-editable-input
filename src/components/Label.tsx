@@ -2,7 +2,7 @@ import { Edit } from '@material-ui/icons';
 import React from 'react';
 import { SmallIconButton } from '.';
 import { defaultProps } from '../defaultProps';
-import { EditType } from '../types';
+import { EditType, Value } from '../types';
 
 const Label = ({
   text,
@@ -12,7 +12,7 @@ const Label = ({
   editIconVisible,
   handleIconClicked,
 }: {
-  text: string;
+  text: Value;
   editType?: EditType;
   style: React.CSSProperties | undefined;
   eventProps: any;
